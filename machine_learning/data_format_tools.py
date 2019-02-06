@@ -1,4 +1,6 @@
-
+"""
+Dataframes usually are better, but these functions are helpful:
+"""
 
 #
 # given two lists of equal length, where one contains a class indicator and the other contains the corresponding value, this function creates a dictionary where the classes are keys
