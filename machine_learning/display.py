@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 #
 # Makes ROC curves
 #
+# Code modified from that at https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html.
+#
 def make_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=None):
     fpr, tpr, _ = roc_curve(y_known, y_score)
     roc_auc = auc(fpr, tpr)
