@@ -13,3 +13,7 @@ Functions for fancy string representations of numbers, not available without cus
 ### data_format_tools.py
 
 Functions for converting classification project data into various formats.
+
+### display.py
+
+Display-related functions, such as code for making ROC curves.
