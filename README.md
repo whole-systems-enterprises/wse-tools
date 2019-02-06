@@ -1,2 +1,2 @@
 # wse-tools
-Useful modules that I find have generic application much of my work.
+Useful modules that we find have generic application much of our work.
