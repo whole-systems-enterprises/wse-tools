@@ -1,5 +1,10 @@
+"""
+Functions for displaying numeric information in HTML
+"""
 
-
+#
+# Used internally by the function "make_table_from_matrix"
+#
 def make_table_components_from_matrix(m, top_header, side_header=None, round_it_to=None, class_name_root='wse-matrix-table'):
 
     matrix_as_html_list = []
@@ -34,7 +39,9 @@ def make_table_components_from_matrix(m, top_header, side_header=None, round_it_
 
     return matrix_as_html_list
 
-
+#
+# Creates an HTML display of a matrix
+#
 def make_table_from_matrix(m, top_header, side_header=None, round_it_to=None, class_name_root='wse-matrix-table'):
     matrix_as_html_list = make_table_components_from_matrix(m, top_header, side_header=side_header, round_it_to=round_it_to, class_name_root=class_name_root)
 
@@ -49,3 +56,20 @@ def make_table_from_matrix(m, top_header, side_header=None, round_it_to=None, cl
 
     return '\n'.join(html_as_list)
 
+#
+# makes a generic CSS template
+#
+def make_generic_matrix_table_css(class_name_root='wse-matrix-table'):
+    css = ''
+    css += '.' + class_name_root + '-table {\n'
+    css += '  border-collapse: collapse;\n'
+    css += '}'
+    css += '\n'
+    css += '.' + class_name_root + '-table, .' + class_name_root + '-th, .' + class_name_root + '-td {\n'
+    css += '  border: 1px solid black;\n'
+    css += '}'
+    css += '.' + class_name_root + '-th, .' + class_name_root + '-td {\n'
+    css += '  padding-left: 10px;\n'
+    css += '  padding-right: 10px;\n'
+    css += '}'
+    return css
