@@ -13,5 +13,5 @@ if __name__ == '__main__':
     print()
     print(M)
     print()
-    pp.pprint(numeric_tables.make_table_components_from_matrix(M, top_header, side_header=side_header))
+    print(numeric_tables.make_table_from_matrix(M, top_header, side_header=side_header))
     print()
