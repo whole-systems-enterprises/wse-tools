@@ -1,8 +1,10 @@
 import data_format_tools
+import display
 
 import pprint as pp
 import matplotlib.pyplot as plt
 from scipy.stats import kruskal
+import random
 
 if __name__ == '__main__':
 
@@ -18,9 +20,21 @@ if __name__ == '__main__':
 
     print(kruskal(*list_of_lists))
 
-    plt.figure()
-    plt.boxplot(list_of_lists, widths=0.95)
-    plt.xticks(range(1, len(labels_list) + 1), labels_list)
-    plt.show()
-    plt.close()
+#     plt.figure()
+#     plt.boxplot(list_of_lists, widths=0.95)
+#     plt.xticks(range(1, len(labels_list) + 1), labels_list)
+#     plt.show()
+#     plt.close()
 
+
+
+    random.seed(23423)
+    y_known = [1] * 100
+    y_score = [random.gauss(0.4, 0.05) for x in range(0, 100)]
+    y_known.extend([0] * 100)
+    y_score.extend([random.gauss(0.3, 0.05) for x in range(0, 100)])
+
+    display.make_roc_curve(y_known, y_score, title='ROC Curve Test')
+
+
+    
