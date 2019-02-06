@@ -12,9 +12,9 @@ def convert_class_and_item_lists_to_dict_with_classes_as_keys(class_list, item_l
     return new_dict
 
 #
-# given two lists of equal length, where one contains a class indicator and the other contains the corresponding value, this function creates a list in the format required by Matplotlib's boxplot function (plus the labels)
+# given two lists of equal length, where one contains a class indicator and the other contains the corresponding value, this function creates a list in the format required by Matplotlib's boxplot function (plus the labels). Also this format is good for scipy's Kruskal-Wallis test and ANOVA
 #
-def convert_class_and_items_lists_to_boxplot_format(class_list, item_list):
+def convert_class_and_items_lists_to_list_of_lists(class_list, item_list):
     dict_format = convert_class_and_item_lists_to_dict_with_classes_as_keys(class_list, item_list)
     labels_list = sorted(list(dict_format.keys()))
     new_list = []
