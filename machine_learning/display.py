@@ -1,6 +1,9 @@
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 
+#
+# Makes ROC curves
+#
 def make_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=None):
     fpr, tpr, _ = roc_curve(y_known, y_score)
     roc_auc = auc(fpr, tpr)
