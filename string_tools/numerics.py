@@ -37,6 +37,6 @@ def make_integer_an_adjective(int_number):
 #
 # shortcut for scientific notation because I can never remember how to actually do it
 #
-def scientific_notation_shortcut(float_number, significant_digits):
-    format_string = '%0.' + str(significant_digits) + 'e'
+def scientific_notation_shortcut(float_number, number_of_digits_after_decimal_point):
+    format_string = '%.' + str(number_of_digits_after_decimal_point) + 'e'
     return(str(eval(format_string % float_number)))
