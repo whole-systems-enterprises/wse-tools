@@ -1,6 +1,6 @@
 # wse-tools
-
-Useful modules that we find have generic application much of our work.
+<<<<<<< HEAD
+Useful modules that I find have generic application much of my work.
 
 ## string_tools
 
@@ -13,3 +13,7 @@ Functions for fancy string representations of numbers, not available without cus
 ### data_format_tools
 
 Functions for converting classification project data into various formats.
+
+=======
+Useful modules that we find have generic application much of our work.
+>>>>>>> b5f5d22552a47555a92432d38e6796374ffed6e5
