@@ -17,3 +17,9 @@ Functions for converting classification project data into various formats.
 ### display.py
 
 Display-related functions, such as code for making ROC curves.
+
+## html
+
+### numeric_tables.py
+
+Functions for displaying numeric data structures, such as matrices as HTML.
