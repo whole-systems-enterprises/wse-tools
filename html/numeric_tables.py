@@ -68,6 +68,7 @@ def make_generic_matrix_table_css(class_name_root='wse-matrix-table'):
     css += '.' + class_name_root + '-table, .' + class_name_root + '-th, .' + class_name_root + '-td {\n'
     css += '  border: 1px solid black;\n'
     css += '}'
+    css += '\n'
     css += '.' + class_name_root + '-th, .' + class_name_root + '-td {\n'
     css += '  padding-left: 10px;\n'
     css += '  padding-right: 10px;\n'
