@@ -3,8 +3,10 @@ import numerics
 
 if __name__ == '__main__':
 
+    print()
     print(numerics.left_pad_zeros_for_a_number(23, 5))
 
+    print()
     print(numerics.make_integer_an_adjective(1))
     print(numerics.make_integer_an_adjective(10))
     print(numerics.make_integer_an_adjective(11))
@@ -40,3 +42,8 @@ if __name__ == '__main__':
     print(numerics.make_integer_an_adjective(322))
     print(numerics.make_integer_an_adjective(323))
     print(numerics.make_integer_an_adjective(324))
+
+    print()
+    print(numerics.scientific_notation_shortcut(0.0000000000034256, 2))
+    print(numerics.scientific_notation_shortcut(0.0000000000034256, 3))
+    print(numerics.scientific_notation_shortcut(0.0000000000034256, 4))
