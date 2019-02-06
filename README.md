@@ -1,6 +1,6 @@
 # wse-tools
 
-Useful modules that we find have generic application much of our work.
+Useful modules that we find have generic application for much of our work.
 
 ## string_tools
 
