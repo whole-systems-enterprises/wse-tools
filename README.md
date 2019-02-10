@@ -23,3 +23,10 @@ Display-related functions, such as code for making ROC curves.
 ### numeric_tables.py
 
 Functions for displaying numeric data structures, such as matrices as HTML.
+
+## statistics
+
+### functions.py
+
+Basic statistical functions not found in SciPy or NumPy.
+
