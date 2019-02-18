@@ -26,3 +26,4 @@ def make_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=N
 
     plt.close()
 
+    return roc_auc
