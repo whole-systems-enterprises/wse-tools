@@ -18,6 +18,10 @@ Functions for converting classification project data into various formats.
 
 Display-related functions, such as code for making ROC curves.
 
+### lstm_tools.py
+
+General functions for creating and working with LSTM models.
+
 ## html
 
 ### numeric_tables.py
