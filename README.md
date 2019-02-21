@@ -1,4 +1,4 @@
-# wse-tools
+# wsetools
 
 Useful modules that we find have generic application for much of our work.
 
