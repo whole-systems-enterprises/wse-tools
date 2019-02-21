@@ -2,13 +2,22 @@ from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 
 #
-# Makes ROC curves
+# get ROC curve data
+#
+def get_roc_curve_data(y_known, y_score):
+    fpr, tpr, _ = roc_curve(y_known, y_score)
+    roc_auc = auc(fpr, tpr)
+    return fpr, tpr, roc_auc
+
+#
+# plot ROC curve
 #
 # Code modified from that at https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html.
 #
-def make_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=None):
-    fpr, tpr, _ = roc_curve(y_known, y_score)
-    roc_auc = auc(fpr, tpr)
+def plot_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=None):
+
+    get_roc_curve_data(y_known, y_score)
+    
     plt.figure(figsize=figsize)
     plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
     plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
