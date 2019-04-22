@@ -16,7 +16,7 @@ def get_roc_curve_data(y_known, y_score):
 #
 def plot_roc_curve(y_known, y_score, figsize=None, title='ROC Curve', filename=None):
 
-    get_roc_curve_data(y_known, y_score)
+    fpr, tpr, roc_auc = get_roc_curve_data(y_known, y_score)
     
     plt.figure(figsize=figsize)
     plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
