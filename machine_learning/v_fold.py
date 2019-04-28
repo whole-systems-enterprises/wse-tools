@@ -1,5 +1,6 @@
 
 import numpy as np
+from itertools import combinations
 
 def separate_indices_into_folds(N, n_folds):
     index_array = np.arange(0, N, 1, dtype=np.int64)
@@ -15,6 +16,19 @@ def separate_indices_into_folds(N, n_folds):
     folds[index + 1] = index_array[i:(i + each_group_distance)]
     return folds
 
+def get_the_v_fold_training_and_testing_indices(folds):
+    n_folds = folds.shape[0]
+    elements_per_fold = folds.shape[1]
+    index_list = range(0, n_folds)
+    training_list = []
+    for c in combinations(index_list, n_folds - 1):
+        for testing_i in index_list:
+            if not testing_i in c:
+                break
+        training_indices = folds[c, :].reshape([(n_folds - 1) * elements_per_fold])
+        training_list.append(training_indices)
+
+    return training_list
 
 
 
@@ -23,7 +37,13 @@ def separate_indices_into_folds(N, n_folds):
 
 
 if __name__ == '__main__':
-    print(separate_indices_into_folds(101, 5))
+    folds = separate_indices_into_folds(101, 5)
+    training_list = get_the_v_fold_training_and_testing_indices(folds)
 
-    
+    print()
+    print(training_list)
+    print()
+    print()
+    print()
+
     
