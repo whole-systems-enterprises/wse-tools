@@ -1,7 +1,13 @@
 
+#
+# load useful libraries
+#
 import numpy as np
 from itertools import combinations
 
+#
+# creates a randomly shuffled list of indices and splits them into folds
+#
 def randomly_separate_indices_into_folds(N, n_folds):
     index_array = np.arange(0, N, 1, dtype=np.int64)
     np.random.shuffle(index_array)
@@ -16,6 +22,9 @@ def randomly_separate_indices_into_folds(N, n_folds):
     folds[index + 1] = index_array[i:(i + each_group_distance)]
     return folds
 
+#
+# takes the folds and creates indices indicating training and testing sets for each fold
+#
 def get_the_v_fold_training_and_testing_indices(folds):
     n_folds = folds.shape[0]
     elements_per_fold = folds.shape[1]
@@ -31,12 +40,9 @@ def get_the_v_fold_training_and_testing_indices(folds):
 
     return training_indices, testing_indices
 
-
-
-
-
-
-
+#
+# tests
+#
 if __name__ == '__main__':
     folds = randomly_separate_indices_into_folds(100, 5)
     training_indices, testing_indices = get_the_v_fold_training_and_testing_indices(folds)
