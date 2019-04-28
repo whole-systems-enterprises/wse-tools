@@ -2,7 +2,7 @@
 import numpy as np
 from itertools import combinations
 
-def separate_indices_into_folds(N, n_folds):
+def randomly_separate_indices_into_folds(N, n_folds):
     index_array = np.arange(0, N, 1, dtype=np.int64)
     np.random.shuffle(index_array)
 
@@ -20,15 +20,16 @@ def get_the_v_fold_training_and_testing_indices(folds):
     n_folds = folds.shape[0]
     elements_per_fold = folds.shape[1]
     index_list = range(0, n_folds)
-    training_list = []
-    for c in combinations(index_list, n_folds - 1):
+    training_indices = np.zeros([n_folds, (n_folds - 1) * elements_per_fold])
+    testing_indices = np.zeros([n_folds, elements_per_fold])
+    for idx, c in enumerate(combinations(index_list, n_folds - 1)):
         for testing_i in index_list:
             if not testing_i in c:
                 break
-        training_indices = folds[c, :].reshape([(n_folds - 1) * elements_per_fold])
-        training_list.append(training_indices)
+        training_indices[idx] = folds[c, :].reshape([(n_folds - 1) * elements_per_fold])
+        testing_indices[idx] = folds[testing_i, :]
 
-    return training_list
+    return training_indices, testing_indices
 
 
 
@@ -37,13 +38,13 @@ def get_the_v_fold_training_and_testing_indices(folds):
 
 
 if __name__ == '__main__':
-    folds = separate_indices_into_folds(101, 5)
-    training_list = get_the_v_fold_training_and_testing_indices(folds)
+    folds = randomly_separate_indices_into_folds(100, 5)
+    training_indices, testing_indices = get_the_v_fold_training_and_testing_indices(folds)
 
     print()
-    print(training_list)
+    print(training_indices)
     print()
-    print()
+    print(testing_indices)
     print()
 
     
