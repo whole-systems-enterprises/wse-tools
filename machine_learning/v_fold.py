@@ -12,7 +12,7 @@ def randomly_separate_indices_into_folds(N, n_folds):
     index_array = np.arange(0, N, 1, dtype=np.int64)
     np.random.shuffle(index_array)
 
-    each_group_distance = int(round(float(N) / float(n_folds)))
+    each_group_distance = int(np.floor(float(N) / float(n_folds)))
 
     folds = np.zeros([n_folds, each_group_distance], dtype=np.int64)
     old_i = 0
