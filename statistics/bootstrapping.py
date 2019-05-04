@@ -10,6 +10,8 @@ from numpy.random import choice
 #
 # The "function" argument is something like np.mean, np.median, or np.std.
 #
+# Assumes IID observations (e.g. no autocorrelation).
+#
 def bootstrap_1D_no_for_loops(x, function, repetitions, number_to_sample_with_replacement = None, confidence_interval_as_proportion = 0.95):
 
     # decide whether each resampled set should be as large as the original sample set
